@@ -1,0 +1,81 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: 
+ * @Date: 2020-05-16 12:52:43
+ * @LastEditors: 三天
+ * @LastEditTime: 2020-05-17 20:57:04
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app" class="wrapper" data-id="asdg5411">
+      <h1>this is ZVue</h1>
+      <a v-bind:href="aTarget.href" >a标签</a>
+      <p>{{person.name}} === {{person.age}}</p>
+      <input v-model="inputTarget.modelVal" />
+      <p>{{inputTarget.modelVal}}</p>
+      <div v-text="staticData.text.dataText" data-type="text"></div>
+      <div v-html="staticData.html.dataHtml" data-type="html"></div>
+      <ul v-for="item in dataList">
+        <li>
+          <span>公司名: {{item.name}}</span>
+          <span>所在国家333: {{item.nation}}</span>
+        </li>
+      </ul>
+      <button v-on:click="handleClick">按钮</button>
+    </div>
+
+    <script src="./ZVue.js"></script>
+    <script>
+      let vue = new ZVue({
+        el: '#app',
+        data: {
+          person: {
+            name: 'Zstar01',
+            age: 188
+          },
+          aTarget: {
+            href: "www.baidu.com",
+          },
+          inputTarget: {
+            modelVal: "v-model测试"
+          },
+          staticData: {
+            text: {
+              dataText: '这是一段普通文本'
+            },
+            html: {
+              dataHtml: `<h3>这是一段html代码<h3>`
+            }
+          },
+          dataList: [
+            {
+              name: '阿里巴巴',
+              nation: '中国'
+            },
+            {
+              name: '谷歌',
+              nation: '美国'
+            },
+            {
+              name: '东印度公司',
+              nation: '英国'
+            }
+          ]
+        },
+        methods: {
+          handleClick(){
+            alert(666)
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
