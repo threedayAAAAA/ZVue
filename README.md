@@ -1,2 +1,4 @@
 # ZVue
-simple vue framwork
+仿vue源码,分模块手撸的简易版
+
+每一个模块都会按开发的顺序分成不同的分支
